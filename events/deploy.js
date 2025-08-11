@@ -5,6 +5,7 @@ require('dotenv').config();
 
 const token = process.env.DISCORD_TOKEN;
 const clientId = process.env.CLIENT_ID;
+const guildId = process.env.GUILD_ID;
 
 module.exports = {
     name: 'deploy',
@@ -36,9 +37,14 @@ module.exports = {
             console.log(`refreshing ${commands.length} application commands...`);
 
             const data = await rest.put(
-                Routes.applicationCommands(clientId),
+                Routes.applicationGuildCommands(clientId, guildId),
                 { body: commands },
             );
+
+            await rest.put(
+                Routes.applicationCommands(clientId),
+                { body: [] }
+            )
 
             console.log(`reloaded ${data.length} application commands successfully`);
         } catch (error) {
