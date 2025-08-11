@@ -1,0 +1,3 @@
+.env
+eslint.config.*
+node_modules/
