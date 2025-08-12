@@ -48,7 +48,7 @@ module.exports = {
 		if (!message) {
 			const embed = new EmbedBuilder()
 				.setTitle('open a ticket here')
-				.setDescription('click the button below to open a new support ticket')
+				.setDescription('click the button below to open a new support ticket.')
 				.setColor('Orange');
 
 			const button = new ButtonBuilder()

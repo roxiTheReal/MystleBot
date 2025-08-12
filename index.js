@@ -41,3 +41,6 @@ for (const file of eventFiles) {
 }
 
 client.login(token);
+
+const suggestCommand = require('./commands/misc/suggest');
+suggestCommand.modalHandler(client);
