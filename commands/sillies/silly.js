@@ -16,8 +16,8 @@ module.exports = {
                 await interaction.reply('something went wrong, i couldn\'t find any cat pics :(');
                 return;
             }
-
-            await interaction.reply(data[0].url);
+            await interaction.deferReply();
+            await interaction.editReply(data[0].url);
         } catch (err) {
             console.error(err);
             await interaction.reply('something went wrong, i couldn\'t find any cat pics :(');
